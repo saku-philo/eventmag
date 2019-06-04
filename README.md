@@ -44,16 +44,16 @@ Ruby 2.5.5 Rails 5.2.3 Bundler 2.0.1
   * グループ登録、編集、削除機能
 
 ### カタログ設計
-https://docs.google.com/spreadsheets/d/1IxFO_lhTKJmwI5V355UO4pIFGzdlQ-2aR6kXkJ7jXZ8/edit#gid=366795619
+https://docs.google.com/spreadsheets/d/1IxFO_lhTKJmwI5V355UO4pIFGzdlQ-2aR6kXkJ7jXZ8/edit?usp=sharing
 
 ### テーブル定義
-https://docs.google.com/spreadsheets/d/16VJQ92Vfc0loozkx1x08XRagFdpBjzT40WmXPPPQlUQ/edit#gid=1565699688
+https://docs.google.com/spreadsheets/d/16VJQ92Vfc0loozkx1x08XRagFdpBjzT40WmXPPPQlUQ/edit?usp=sharing
 
 ### 画面遷移図
-https://www.draw.io/?state=%7B%22ids%22:%5B%221J_nGxPVocNoPjdlnj416YXFzNDByELQ3%22%5D,%22action%22:%22open%22,%22userId%22:%22106323086969784411363%22%7D#G1J_nGxPVocNoPjdlnj416YXFzNDByELQ3
+https://drive.google.com/file/d/1J_nGxPVocNoPjdlnj416YXFzNDByELQ3/view?usp=sharing
 
 ### ワイヤーフレーム
-https://www.draw.io/?state=%7B%22ids%22:%5B%221qDyqemBq3D5i2nXm4nUFl7Zpkhm1guGr%22%5D,%22action%22:%22open%22,%22userId%22:%22106323086969784411363%22%7D#G1qDyqemBq3D5i2nXm4nUFl7Zpkhm1guGr
+https://drive.google.com/file/d/1qDyqemBq3D5i2nXm4nUFl7Zpkhm1guGr/view?usp=sharing
 
 ## 使用gem(予定含む)
 * device
