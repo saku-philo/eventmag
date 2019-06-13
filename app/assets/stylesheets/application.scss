@@ -1,1 +1,11 @@
 @import "bootstrap";
+
+/* 投稿イベント一覧の設定 */
+.index_events {
+  display: grid;
+  grid-auto-flow: row;
+  grid: auto-flow 240px / 240px 240px 240px;
+  justify-content: center;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
