@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "step 1 create events"
+Rails.logger.debug 'create sample event data'
 
-50.times do |n|
+50.times do
   name = Faker::Restaurant.name
   place = Faker::Address.city
   image = ""
@@ -28,6 +28,5 @@ puts "step 1 create events"
                 link_url: link_url,
                 cost: cost,
                 capacity: capacity,
-                meta: meta
-               )
+                meta: meta)
 end
