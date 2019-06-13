@@ -10,6 +10,11 @@
       <p>参加費用：<%= @event.cost %></p>
       <p>備考：<%= @event.meta %></p>
       <%= link_to '一覧へ', events_path, class: 'btn btn-primary' %>
+      <%= link_to '編集', edit_event_path(@event), class: 'btn btn-success' %>
+      <%= link_to '削除', event_path(@event),
+                          method: :delete,
+                          data: { confirm: "タスク「#{@event.name}」を削除します。よろしいですか？" },
+                          class: 'btn btn-danger' %>
     </div>
   </div>
 </div>
