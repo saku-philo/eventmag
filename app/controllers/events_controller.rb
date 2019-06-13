@@ -20,11 +20,31 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit; end
-end
+  def edit
+    @event = Event.find(params[:id])
+  end
 
-private
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to events_path, notice: "イベント#{@event.name}の情報を更新しました！"
+    else
+      render :edit
+    end
+  end
 
-def event_params
-  params.require(:event).permit(:name, :place, :date, :start_at, :end_at, :cost, :capacity, :meta)
+  def destroy
+    @event = Event.find(params[:id])
+    if @event.destroy
+      redirect_to events_path, alert: "イベント#{@event.name}の情報を削除しました！"
+    else
+      render :index
+    end
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:name, :place, :date, :start_at, :end_at, :cost, :capacity, :meta)
+  end
 end

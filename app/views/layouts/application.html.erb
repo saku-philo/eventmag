@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <% if flash.notice.present? %>
+      <div class="container alert alert-success my-2">
+        <%= notice %>
+      </div>
+    <% elsif flash.alert.present? %>
+      <div class="container alert alert-danger my-2">
+        <%= alert %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
