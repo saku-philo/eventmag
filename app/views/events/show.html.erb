@@ -1,2 +1,15 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class="container">
+  <h3>イベント詳細</h3>
+  <div class="card shadow mx-auto" style="max-width: 50rem;">
+    <div class="card-body">
+      <p>イベント名：<%= @event.name %></p>
+      <p>日時：<%= @event.date %></p>
+      <p>開催場所：<%= @event.place %></p>
+      <p>開始時間：<%= @event.start_at %></p>
+      <p>終了時間：<%= @event.end_at %></p>
+      <p>参加費用：<%= @event.cost %></p>
+      <p>備考：<%= @event.meta %></p>
+      <%= link_to '一覧へ', events_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
