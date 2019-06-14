@@ -1,3 +1,7 @@
+#require:
+#  - rubocop-other-extension
+#  - rubocop-rails
+
 AllCops:
   TargetRubyVersion: 2.5
 
