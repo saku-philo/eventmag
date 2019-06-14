@@ -51,9 +51,9 @@ jobs:
 
       # run tests!
       # rubocopを実行
-      - run:
-          name: rubocop
-          command: bundle exec rubocop
+      #- run:
+      #    name: rubocop
+      #    command: bundle exec rubocop
 
       # Rspec,System specを実行
       - run:
