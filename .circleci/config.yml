@@ -46,8 +46,8 @@ jobs:
       - run:
           name: Database setup
           command: |
-            bundle exec rake db:create
-            bundle exec rake db:structure:load
+            bin/rails db:create
+            bin/rails db:schema:load --trace
 
       # run tests!
       # rubocopを実行
