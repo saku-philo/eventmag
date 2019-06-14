@@ -42,7 +42,6 @@ group :development, :test do
   # 静的解析
   gem 'rubocop'
   gem 'rubocop-rspec'
-  #gem 'rubocop-rails'
 end
 
 group :development do
