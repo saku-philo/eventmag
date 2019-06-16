@@ -40,8 +40,8 @@ group :development, :test do
   gem 'pry-rails'
 
   # 静的解析
-  #gem 'rubocop'
-  #gem 'rubocop-rspec'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
 end
 
 group :development do
