@@ -53,7 +53,7 @@ describe 'イベントCRUD機能', type: :system do
       fill_in 'event_capacity', with: '200'
       fill_in 'event_meta', with: 'お弁当持参してください！'
       # 登録ボタンを押す
-      click_on 'Create Event'
+      click_button 'Create Event'
       # 登録内容が画面に表示されているか確認する
       visit events_path
       save_and_open_page
