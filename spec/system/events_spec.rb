@@ -55,6 +55,8 @@ describe 'イベントCRUD機能', type: :system do
       # 登録ボタンを押す
       click_on 'Create Event'
       # 登録内容が画面に表示されているか確認する
+      visit events_path
+      save_and_open_page
       expect(page).to have_content '運動会'
     end
   end
