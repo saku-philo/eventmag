@@ -44,7 +44,7 @@ describe 'イベントCRUD機能', type: :system do
       # 新規登録画面に移動
       visit new_event_path
       # 各種項目を入力する
-      fill_in 'event_name', with: 'イベント4'
+      fill_in 'event_name', with: 'イベント3'
       fill_in 'event_place', with: '渋谷区第二広場'
       fill_in 'event_date', with: '2019/07/15'.to_date
       fill_in 'event_start_at', with: '10:00'
@@ -57,7 +57,7 @@ describe 'イベントCRUD機能', type: :system do
       # 登録内容が画面に表示されているか確認する
       visit events_path
       save_and_open_page
-      expect(page).to have_content 'イベント4'
+      expect(page).to have_content 'イベント3'
     end
   end
 
