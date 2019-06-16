@@ -19,7 +19,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 # ログイン機能
-gem 'device'
+gem 'devise'
 
 # デプロイ関係
 # Use Capistrano for deployment
