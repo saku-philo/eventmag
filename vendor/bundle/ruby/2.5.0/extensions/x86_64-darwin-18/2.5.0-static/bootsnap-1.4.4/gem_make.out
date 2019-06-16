@@ -1,5 +1,5 @@
 current directory: /Users/hiron/workspace/eventmag/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.4/ext/bootsnap
-/Users/hiron/.rbenv/versions/2.5.5/bin/ruby -r ./siteconf20190612-4947-tpm92q.rb extconf.rb
+/Users/hiron/.rbenv/versions/2.5.5/bin/ruby -r ./siteconf20190616-18391-1fozhkc.rb extconf.rb
 creating Makefile
 
 current directory: /Users/hiron/workspace/eventmag/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.4/ext/bootsnap
@@ -12,4 +12,4 @@ linking shared-object bootsnap/bootsnap.bundle
 
 current directory: /Users/hiron/workspace/eventmag/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.4/ext/bootsnap
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190612-4947-196r1ut/bootsnap
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190616-18391-138d9e/bootsnap

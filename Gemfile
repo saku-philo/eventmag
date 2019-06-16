@@ -40,8 +40,8 @@ group :development, :test do
   gem 'pry-rails'
 
   # 静的解析
-  gem 'rubocop'
-  gem 'rubocop-rspec'
+  #gem 'rubocop'
+  #gem 'rubocop-rspec'
 end
 
 group :development do
@@ -58,6 +58,7 @@ group :test do
   gem 'rspec_junit_formatter'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'launchy'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

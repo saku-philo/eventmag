@@ -1,5 +1,5 @@
 current directory: /Users/hiron/workspace/eventmag/vendor/bundle/ruby/2.5.0/gems/msgpack-1.2.10/ext/msgpack
-/Users/hiron/.rbenv/versions/2.5.5/bin/ruby -r ./siteconf20190612-4947-kqiue1.rb extconf.rb
+/Users/hiron/.rbenv/versions/2.5.5/bin/ruby -r ./siteconf20190616-18391-793y4q.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_str_replace() in ruby.h... yes
@@ -36,4 +36,4 @@ linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/hiron/workspace/eventmag/vendor/bundle/ruby/2.5.0/gems/msgpack-1.2.10/ext/msgpack
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20190612-4947-sleyv2/msgpack
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20190616-18391-5vg4ox/msgpack
