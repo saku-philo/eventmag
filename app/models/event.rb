@@ -7,4 +7,6 @@ class Event < ApplicationRecord
     validates :cost
     validates :capacity
   end
+
+  belongs_to :user
 end

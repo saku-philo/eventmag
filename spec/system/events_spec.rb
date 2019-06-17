@@ -1,12 +1,26 @@
 require 'rails_helper'
 
 describe 'イベントCRUD機能', type: :system do
-  # イベントを３件作成する
+  # ユーザーAを作成
+  let!(:user_a) { FactoryBot.create(:user, name: 'ユーザーA', email: 'a@example.com' ) }
+  # ユーザーBを作成
+  let!(:user_b) { FactoryBot.create(:user, name: 'ユーザーB', email: 'b@example.com' ) }
+
+  # イベントを３件ユーザーAで作成する
   1.upto(3) do |num|
-    let!("event_#{num}") { FactoryBot.create(:event, name: "イベント#{num}", place: "開催場所#{num}") }
+    let!("event_#{num}") { FactoryBot.create(:event, name: "イベント#{num}", place: "開催場所#{num}", user: user_a) }
+  end
+
+  before do
+    # 登録したユーザーでログインする
+    visit user_session_path
+    fill_in 'user_email', with: login_user.email
+    fill_in 'user_password', with: login_user.password
+    click_button 'Log in'
   end
 
   describe '一覧表示機能' do
+    let(:login_user) { user_a }
     it '作成したイベントが全て表示される' do
       # 一覧ページに移動する
       visit events_path
@@ -18,6 +32,7 @@ describe 'イベントCRUD機能', type: :system do
   end
 
   describe 'イベント詳細表示機能' do
+    let(:login_user) { user_a }
     it '詳細1表示確認' do
       visit event_path(event_1)
       expect(page).to have_content '開催場所1'
@@ -30,6 +45,7 @@ describe 'イベントCRUD機能', type: :system do
   end
 
   describe 'イベント編集機能' do
+    let(:login_user) { user_a }
     it '編集登録' do
       visit event_path(event_1)
       click_on '編集'
@@ -40,6 +56,7 @@ describe 'イベントCRUD機能', type: :system do
   end
 
   describe 'イベント新規作成' do
+    let(:login_user) { user_a }
     it '新規登録' do
       # 新規登録画面に移動
       visit new_event_path
@@ -56,12 +73,12 @@ describe 'イベントCRUD機能', type: :system do
       click_button 'Create Event'
       # 登録内容が画面に表示されているか確認する
       visit events_path
-      save_and_open_page
       expect(page).to have_content 'イベント3'
     end
   end
 
   describe 'イベント削除', js: true do
+    let(:login_user) { user_a }
     it 'イベント2を削除する' do
       # イベント2の詳細画面に移動
       visit event_path(event_2)
