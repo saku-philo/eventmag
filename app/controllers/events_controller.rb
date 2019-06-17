@@ -23,7 +23,8 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @event.update(event_params)
@@ -48,7 +49,7 @@ class EventsController < ApplicationController
   end
 
   def check_contributor
-    if current_user.id == params[:id]
+    if current_user.id == Event.find(params[:id]).user.id
       @event = Event.find(params[:id])
     else
       redirect_to events_path, alert: "投稿者以外はイベントを編集、削除出来ません!"

@@ -10,5 +10,6 @@ FactoryBot.define do
     cost { '3000' }
     capacity { '10' }
     meta { '二次会は未定です。' }
+    user
   end
 end
