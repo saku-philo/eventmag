@@ -48,6 +48,9 @@ Layout/IndentFirstHashElement:
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
+Lint/UnusedMethodArgument:
+  Enabled: false
+
 Metrics/MethodLength:
   Enabled: false
 
