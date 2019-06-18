@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'joins/create'
+  get 'joins/destroy'
   get 'users/show'
   root to: 'events#index'
 
