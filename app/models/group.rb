@@ -3,4 +3,5 @@ class Group < ApplicationRecord
   validates :summary, presence: true
 
   has_many :joins, dependent: :destroy
+  has_many :user, through: :joins
 end

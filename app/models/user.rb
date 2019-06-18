@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   has_many :events, dependent: :destroy
   has_many :joins, dependent: :destroy
+  has_many :groups, through: :joins
 end
