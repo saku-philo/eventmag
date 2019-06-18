@@ -1,0 +1,17 @@
+<div class="container">
+  <%= form_with(model: @group, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control', placeholder: "チーム名を入力してください（必須）" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :summary %>
+      <%= f.text_area :summary, class: 'form-control', placeholder: "グループ概要を入力してください（必須）" %>
+    </div>
+
+    <div class="my-5">
+      <%= f.submit nil, class: 'btn btn-outline-primary' %>
+    </div>
+  <% end %>
+</div>
