@@ -15,6 +15,15 @@ class Group < ApplicationRecord
     User.find(leader_id)
   end
 
+  def self.check_leader(group, user)
+    leader_id = group.joins.find_by(is_leader: true).user_id
+    user.id == leader_id
+  end
+
+  def self.check_member(group, user)
+    group.users.find_by(name: user.name)
+  end
+
   def self.group_members(group)
     members = []
     join_info = group.joins.where(is_leader: false)
