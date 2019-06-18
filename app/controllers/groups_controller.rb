@@ -1,6 +1,8 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_group, only: %i[show edit update destroy]
+  before_action :check_leader, only: %i[edit update destroy]
+  before_action :check_member, only: %i[show]
 
   def index
     @groups = Group.all
@@ -51,5 +53,19 @@ class GroupsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  # ログインユーザーがグループのリーダーであるかを確認する
+  def check_leader
+    set_group
+    redirect_to group_path(@group), notice: "リーダー以外は編集とか出来ません"\
+    unless Group.check_leader(@group, current_user)
+  end
+
+  # グループメンバー以外はグループ情報を見れないようにする
+  def check_member
+    set_group
+    redirect_to user_path(id: current_user.id), alert: "グループメンバー以外は見れません"\
+    unless Group.check_member(@group, current_user)
   end
 end
