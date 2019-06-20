@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  references: 
+  references: 
+  is_attend: false
+  is_empty: false
+
+two:
+  references: 
+  references: 
+  is_attend: false
+  is_empty: false
