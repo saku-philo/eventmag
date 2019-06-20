@@ -21,6 +21,10 @@ gem 'uglifier', '>= 1.3.0'
 # ログイン機能
 gem 'devise'
 
+# 画像アップロード機能
+gem 'carrierwave'
+gem 'mini_magick', '~> 4.8'
+
 # デプロイ関係
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
