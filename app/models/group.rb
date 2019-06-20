@@ -1,4 +1,6 @@
 class Group < ApplicationRecord
+  mount_uploader :icon, ImageUploader
+
   validates :name, presence: true, length: { maximum: 50 }, uniqueness: true
   validates :summary, presence: true
 
