@@ -1,6 +1,12 @@
 <div class="container">
   <h3>グループページ</h3>
-  <div class="card shadow mx-auto" style="max-width: 50rem;">
+  <div class="card shadow img-thumbnail mx-auto" style="max-width: 50rem;">
+    <% if @group.icon.url.presence %>
+      <%= image_tag @group.icon.url, class: 'img-fluid' %>
+    <% else %>
+      <!-- 'no_image.png'は、assets/images内に配置 -->
+      <%= image_tag 'no_image.png', class: 'img-fluid', style: 'border: 1px solid lightgray' %>
+    <% end %>
     <div class="card-body">
       <p>グループ名：<%= @group.name %></p>
       <p>リーダー：<%= @leader.name %></p>
