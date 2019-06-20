@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @attend = Attend.find_by(user_id: current_user.id, event_id: @event.id)
   end
 
   def new
@@ -23,7 +24,8 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @event.update(event_params)

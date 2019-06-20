@@ -24,6 +24,16 @@
                           method: :delete,
                           data: { confirm: "タスク「#{@event.name}」を削除します。よろしいですか？" },
                           class: 'btn btn-danger' %>
+
+      <!-- イベントへの参加（attend create）ボタン -->
+      <!-- 既にイベントに参加申し込みをしているかを確認 -->
+      <% if user_apply_event?(current_user,@event) %>
+        <%= link_to '参加キャンセル', attend_path(@attend),
+                                          method: :delete, class: 'btn btn-danger' %>
+      <% else %>
+        <%= link_to '参加する', attends_path(event_id: @event.id),
+                                          method: :post, class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>
