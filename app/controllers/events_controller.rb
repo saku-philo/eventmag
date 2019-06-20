@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @attend = Attend.find_by(user_id: current_user.id, event_id: @event.id)
     all_guest = @event.attends.all
-    @guests = all_guest.map {|g| g.user}
+    @guests = all_guest.map(&:user)
   end
 
   def new
@@ -26,8 +26,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @event.update(event_params)
