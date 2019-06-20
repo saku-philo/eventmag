@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'joins/create'
-  get 'joins/destroy'
-  get 'users/show'
   root to: 'events#index'
 
   devise_for :users, controllers: {
@@ -12,5 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :groups
+  resources :groups do
+    resources :comments
+  end
 end

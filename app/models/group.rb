@@ -4,6 +4,7 @@ class Group < ApplicationRecord
 
   has_many :joins, dependent: :destroy
   has_many :users, through: :joins
+  has_many :comments, dependent: :destroy
 
   def decide_leader(user)
     # ここのcreateはコンソールでのcreateコマンドと同じ
@@ -15,13 +16,13 @@ class Group < ApplicationRecord
     User.find(leader_id)
   end
 
-  def self.check_leader(group, user)
+  def self.group_leader?(group, user)
     leader_id = group.joins.find_by(is_leader: true).user_id
     user.id == leader_id
   end
 
-  def self.check_member(group, user)
-    group.users.find_by(name: user.name)
+  def self.group_member?(group, user)
+    group.users.find_by(name: user.name).present?
   end
 
   def self.group_members(group)

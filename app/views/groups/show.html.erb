@@ -10,6 +10,19 @@
         <p><%= m.name%></p>
       <% end %>
 
+      <div>
+        <p>コメント欄</p>
+        <% @comments.each do |com| %>
+          <p>
+            <span>名前：<%= com.user.name %></span>
+            <span>コメント：<%= com.text %></span>
+            <span>投稿日：<%= com.updated_at.to_time %></span>
+          </p>
+        <% end %>
+      </div>
+
+      <%= render partial: 'comments/form', locals: { comment: @comment, group: @group } %>
+
       <%= link_to '一覧へ', events_path, class: 'btn btn-primary' %>
       <% if @leader.id == current_user.id %>
         <%= link_to 'グループ編集', edit_group_path(@group), class: 'btn btn-success' %>
@@ -19,6 +32,5 @@
                                     class: 'btn btn-danger' %>
       <% end %>
     </div>
-    <p><%= @comment %></p>
   </div>
 </div>
