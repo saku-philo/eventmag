@@ -18,6 +18,11 @@
       <p>参加費用：<%= @event.cost %></p>
       <p>url：<%= @event.link_url %></p>
       <p>備考：<%= @event.meta %></p>
+      <br/>
+      <p>現在の参加者数：<%=@guests.count %>人</p>
+      <% @guests.each do |g| %>
+        <p><%= g.name %>さん</p>
+      <% end %>
       <%= link_to '一覧へ', events_path, class: 'btn btn-primary' %>
       <%= link_to '編集', edit_event_path(@event), class: 'btn btn-success' %>
       <%= link_to '削除', event_path(@event),
