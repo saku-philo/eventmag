@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  mount_uploader :image, ImageUploader
+
   validates :name, presence: true, length: { maximum: 100 }
   with_options presence: true do
     validates :place
