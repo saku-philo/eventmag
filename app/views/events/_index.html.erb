@@ -1,0 +1,23 @@
+<h3>参加申し込み済みのイベント一覧</h3>
+
+<%= link_to 'イベント登録', new_event_path, class: 'btn btn-outline-success' %>
+
+<div class="container">
+  <div class="index_events" >
+    <% events.each do |event| %>
+      <div class="card img-thumbnail mx-auto caption">
+        <% if event.image.url.presence %>
+          <%= image_tag event.image.url, style: 'border: 1px solid lightgray' %>
+        <% else %>
+          <!-- 'no_image.png'は、assets/images内に配置 -->
+          <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= event.name %></h5>
+          <h6 class="card-subtitle text-muted">開催日:<%= event.date %></h6>
+          <%= link_to '詳細', event_path(event), class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
