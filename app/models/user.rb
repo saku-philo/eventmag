@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :joins, dependent: :destroy
   has_many :groups, through: :joins
   has_many :attends, dependent: :destroy
+  has_many :contacts, dependent: :destroy
 end

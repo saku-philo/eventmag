@@ -13,4 +13,5 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :attends, dependent: :destroy
   has_many :users, through: :attends
+  has_many :contacts, dependent: :destroy
 end
