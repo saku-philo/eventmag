@@ -6,3 +6,5 @@
 <% @groups.each do |g| %>
   <p><%= link_to "#{g.name}", group_path(g) %></p>
 <% end %>
+
+<%= render partial: 'events/index', locals: { events: @events }%>
