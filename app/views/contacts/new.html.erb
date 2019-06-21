@@ -1,0 +1,32 @@
+<h1>Contacts#new</h1>
+<%= form_with(model: @contact, local: true) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <strong><p>投稿者：<%= @event.user.name %></p></strong>
+      <p>イベント名：<%= @event.name %></p>
+      <p>日時：<%= @event.date %></p>
+      <p>開催場所：<%= @event.place %></p>
+      <p>開始時間：<%= "#{@event.start_at.hour}:#{@event.start_at.min}" %></p>
+      <p>終了時間：<%= @event.end_at %></p>
+      <p>参加費用：<%= "#{@event.cost}円" %></p>
+      <p>url：<%= @event.link_url %></p>
+      <p>備考：<%= @event.meta %></p><br/>
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+    <%= f.hidden_field :event_id, value: @event.id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

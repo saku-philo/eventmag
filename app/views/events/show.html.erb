@@ -15,7 +15,7 @@
       <p>開催場所：<%= @event.place %></p>
       <p>開始時間：<%= "#{@event.start_at.hour}:#{@event.start_at.min}" %></p>
       <p>終了時間：<%= @event.end_at %></p>
-      <p>参加費用：<%= @event.cost %></p>
+      <p>参加費用：<%= "#{@event.cost}円" %></p>
       <p>url：<%= @event.link_url %></p>
       <p>備考：<%= @event.meta %></p>
       <br/>
@@ -31,14 +31,17 @@
                           class: 'btn btn-danger' %>
 
       <!-- イベントへの参加（attend create）ボタン -->
-      <!-- 既にイベントに参加申し込みをしているかを確認 -->
-      <% if user_apply_event?(current_user,@event) %>
+      <!-- ログインしていて、イベントに参加申し込みをしている場合、キャンセルボタンを表示する -->
+      <% if current_user && user_apply_event?(current_user,@event)  %>
         <%= link_to '参加キャンセル', attend_path(@attend),
                                           method: :delete, class: 'btn btn-danger' %>
       <% else %>
+        <!-- ログインしていない場合、ログイン画面に遷移させる -->
         <%= link_to '参加する', attends_path(event_id: @event.id),
                                           method: :post, class: 'btn btn-primary' %>
       <% end %>
+      <%= link_to 'お問い合わせ', new_contact_path(event_id: @event.id),
+                                                  class: 'btn btn-info' if current_user %>
     </div>
   </div>
 </div>

@@ -1,4 +1,6 @@
 class AttendsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @attend = current_user.attends.new(attend_params)
     if @attend.save
