@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :events
   resources :users, only: [:show]
   resources :attends, only: [:create, :destroy]
+  resources :joins, only: [:create, :destroy]
   resources :contacts, only: [:new, :create, :index]
 
   resources :groups do

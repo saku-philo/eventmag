@@ -24,7 +24,7 @@ class Group < ApplicationRecord
   end
 
   def self.group_member?(group, user)
-    group.users.find_by(name: user.name).present?
+    group.users.find_by(name: user&.name).present?
   end
 
   def self.group_members(group)
@@ -34,5 +34,15 @@ class Group < ApplicationRecord
       members << User.find(info.user_id)
     end
     members
+  end
+
+  def invite_member(user, group)
+    if Group.group_member?(group, user)
+      "#{user.name}さんは既にグループに登録済みです。"
+    elsif joins.create(user: user)
+      "#{user.name}さんをグループに招待しました！"
+    else
+      "#{user.name}さんの招待に失敗しました。"
+    end
   end
 end
