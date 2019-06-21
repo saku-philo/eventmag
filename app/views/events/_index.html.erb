@@ -1,8 +1,7 @@
-<h3>参加申し込み済みのイベント一覧</h3>
-
-<%= link_to 'イベント登録', new_event_path, class: 'btn btn-outline-success' %>
-
 <div class="container">
+  <h3>参加申し込み済みのイベント一覧</h3>
+
+  <%= link_to 'イベント登録', new_event_path, class: 'btn btn-outline-success' %>
   <div class="index_events" >
     <% events.each do |event| %>
       <div class="card img-thumbnail mx-auto caption">

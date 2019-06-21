@@ -1,0 +1,26 @@
+
+<div class="card shadow mx-auto" style="max-width: 50rem;">
+  <div class="card-body">
+    <h5>投稿したイベント</h5>
+    <strong><p>投稿者：<%= @event.user.name %></p></strong>
+    <p>イベント名：<%= @event.name %></p>
+    <p>日時：<%= @event.date %></p>
+    <p>開催場所：<%= @event.place %></p>
+    <p>開始時間：<%= "#{@event.start_at.strftime("%H:%M")}" %></p>
+    <p>終了時間：<%= @event.end_at.presence ?  "#{@event.end_at&.strftime("%H:%M")}" : '未設定' %></p>
+    <p>参加費用：<%= "#{@event.cost}円" %></p>
+    <p>url：<%= @event.link_url %></p>
+    <p>備考：<%= @event.meta %></p>
+    <br/>
+    <p>問い合わせ一覧</p>
+    <% @contacts.each do |con|%>
+      <div class="card shadow my-2">
+        <div class="card-body">
+          <p>質問者：<%= con.user.name %>さん</p>
+          <p>対象イベント：<%= con.event.name %></p>
+          <p>内容：<%= con.message %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
