@@ -13,9 +13,9 @@
             <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
           <% end %>
           <div class="card-body">
-            <h5 class="card-title"><%= event.name %></h5>
-            <h6 class="card-subtitle text-muted">開催日:<%= event.date %></h6>
-            <%= link_to '詳細', event_path(event), class: 'btn btn-primary' %>
+            <p class="card-title"><%= event.name %></p>
+            <p class="card-subtitle text-muted">開催日:<%= event.date %></p>
+            <%= link_to '詳細', event_path(event), class: 'btn btn-primary btn-sm float-right' %>
           </div>
         </div>
       <% end %>

@@ -1,6 +1,11 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @event = Event.find(params[:id])
+    @contacts = @event.contacts
+  end
+
   def new
     @event = Event.find(params[:event_id])
     @contact = Contact.new
