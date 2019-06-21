@@ -1,5 +1,13 @@
 <div class="container">
   <h1>マイページ</h1>
+  <% if @user.icon.url.presence %>
+      <%= image_tag @user.icon.url, size: '100x100',
+                                    class: 'rounded-circle border border-secondly img-responsive mx-3 my-2' %>
+    <% else %>
+      <!-- 'no_image_man.jpeg'は、app/assets/images内に配置 -->
+      <%= image_tag 'no_image_man.jpeg', size: '100x100',
+                                        class: 'rounded-circle border border-secondly img-responsive mx-3 my-2' %>
+  <% end %>
   <p>名前：<%= @user.name %></p>
   <p>メールアドレス：<%= @user.email %></p>
 
