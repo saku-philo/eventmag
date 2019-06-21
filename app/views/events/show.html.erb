@@ -18,12 +18,27 @@
       <p>参加費用：<%= @event.cost %></p>
       <p>url：<%= @event.link_url %></p>
       <p>備考：<%= @event.meta %></p>
+      <br/>
+      <p>現在の参加者数：<%=@guests.count %>人</p>
+      <% @guests.each do |g| %>
+        <p><%= g.name %>さん</p>
+      <% end %>
       <%= link_to '一覧へ', events_path, class: 'btn btn-primary' %>
       <%= link_to '編集', edit_event_path(@event), class: 'btn btn-success' %>
       <%= link_to '削除', event_path(@event),
                           method: :delete,
                           data: { confirm: "タスク「#{@event.name}」を削除します。よろしいですか？" },
                           class: 'btn btn-danger' %>
+
+      <!-- イベントへの参加（attend create）ボタン -->
+      <!-- 既にイベントに参加申し込みをしているかを確認 -->
+      <% if user_apply_event?(current_user,@event) %>
+        <%= link_to '参加キャンセル', attend_path(@attend),
+                                          method: :delete, class: 'btn btn-danger' %>
+      <% else %>
+        <%= link_to '参加する', attends_path(event_id: @event.id),
+                                          method: :post, class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :groups do
     resources :comments
   end
+
+  resources :attends, only: [:create, :destroy]
 end
