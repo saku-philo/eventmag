@@ -1,6 +1,6 @@
 <div class="container">
   <h3>グループページ</h3>
-  <div class="card shadow img-thumbnail mx-auto" style="max-width: 50rem;">
+  <div class="card shadow img-thumbnail mx-auto" style="max-width: 70rem;">
     <% if @group.icon.url.presence %>
       <%= image_tag @group.icon.url, class: 'img-fluid' %>
     <% else %>
@@ -11,9 +11,15 @@
       <p>グループ名：<%= @group.name %></p>
       <p>リーダー：<%= @leader.name %></p>
       <p>概要：<%= @group.summary %></p>
+
       <p>グループメンバー</p>
-      <% @members.each do |m| %>
-        <p><%= m.name%></p>
+      <% @joins.each do |join| %>
+        <p>
+          <span class="mx-2"><%= join.user.name %></span>
+          <% if current_user == join.user || @leader == current_user %>
+            <span><%= link_to '脱退', join_path(join), method: :delete, class: 'btn btn-danger' %></span>
+          <% end %>
+        </p>
       <% end %><br/>
 
       <p>メンバー招待</p>

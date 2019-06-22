@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @joins = @group.joins.where(is_leader: false)
     @leader = Group.identify_leader(@group)
     @members = Group.group_members(@group)
     @comments = @group.comments.all
