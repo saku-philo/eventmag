@@ -12,11 +12,23 @@ class JoinsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @join = Join.find(params[:id])
+    group = @join.group
+    if @join.destroy
+      redirect_to events_path, notice: "グループから脱退しました！"
+    else
+      redirect_to group_path(group), notice: "グループ脱退に失敗しました"
+    end
+  end
 
   private
 
   def join_params
     params.permit(:group_id, :user_name)
+  end
+
+  def join_delete_params
+    params.permit(:group_id, :user_id)
   end
 end
