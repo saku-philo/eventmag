@@ -3,7 +3,8 @@ class EventsController < ApplicationController
   before_action :check_contributor, only: %i[edit update destroy]
 
   def index
-    @events = Event.all
+    @q = Event.all
+    @events = @q.page(params[:page])
   end
 
   def show
