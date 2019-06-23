@@ -10,9 +10,10 @@ class User < ApplicationRecord
 
   has_many :events, dependent: :destroy
   has_many :joins, dependent: :destroy
-  has_many :groups, through: :joins
+  has_many :groups, through: :joins, dependent: :destroy
   has_many :attends, dependent: :destroy
   has_many :contacts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # oauth認証
   def self.find_for_google(auth)

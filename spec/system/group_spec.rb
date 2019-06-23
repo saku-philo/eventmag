@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe 'グループ管理機能', type: :system do
   # ユーザーAを作成
-  let!(:user_a) { FactoryBot.create(:user, name: 'ユーザーA', email: 'a@example.com' ) }
+  let!(:user_a) { FactoryBot.create(:user, name: 'ユーザーA', email: 'a@example.com', uid: 'a_string' ) }
   # ユーザーBを作成
-  let!(:user_b) { FactoryBot.create(:user, name: 'ユーザーB', email: 'b@example.com' ) }
+  let!(:user_b) { FactoryBot.create(:user, name: 'ユーザーB', email: 'b@example.com', uid: 'b_string' ) }
 
   before do
     # 登録したユーザーでログインする
