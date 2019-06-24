@@ -1,5 +1,5 @@
 $(document).on("turbolinks:load", function() {
-  $('#eventEdit_form').validate({
+  $('#event_form').validate({
       rules: {
           "event[name]": {
               required: true,
@@ -8,6 +8,9 @@ $(document).on("turbolinks:load", function() {
               required: true,
           },
           "event[date]": {
+              required: true,
+          },
+          "event[start_at]": {
               required: true,
           },
           "event[cost]": {
@@ -29,6 +32,9 @@ $(document).on("turbolinks:load", function() {
           },
           "event[date]": {
               required: "必須項目です、入力してください",
+          },
+          "event[start_at]": {
+            required: "必須項目です、入力してください",
           },
           "event[cost]": {
               required: "必須項目です、入力してください",
