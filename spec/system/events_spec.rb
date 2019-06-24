@@ -77,7 +77,7 @@ describe 'イベントCRUD機能', type: :system do
     end
   end
 
-  describe 'イベント削除', js: true do
+  describe 'イベント削除' do
     let(:login_user) { user_a }
     it 'イベント2を削除する' do
       # イベント2の詳細画面に移動

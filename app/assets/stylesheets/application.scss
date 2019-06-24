@@ -18,3 +18,9 @@ body {
   width: 100%;
   height: 230px;
 }
+
+/* フロントバリデーション関係 */
+label.error {
+  color: red;
+  font-weight: bold;
+}
