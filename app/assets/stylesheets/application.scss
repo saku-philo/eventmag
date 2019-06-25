@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body {
   background-color: #fbfaf5
@@ -64,4 +66,22 @@ label.error {
 .logo-font {
   font-weight: bold;
   font-size: 1.5em;
+}
+
+/* google認証ボタン */
+.btn-google {
+  background-color: #e46257;
+}
+
+.btn-google span {
+  color: #fff;
+}
+
+.btn-google span i {
+  color: #fff;
+}
+
+.btn-google:hover {
+  color: #fff;
+  background-color: #df4537;
 }

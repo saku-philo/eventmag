@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'jquery-rails'
 gem 'jquery-validation-rails'
+gem 'font-awesome-sass', '~> 5.8.1'
 
 # ログイン、認証機能
 gem 'devise'
