@@ -1,12 +1,16 @@
-<div class="top-photo">
-  <%= image_tag 'top_image.jpg' %>
-  <p>気になるイベントを探してみよう！</p>
-</div>
+<% unless user_signed_in? %>
+  <div class="top-photo">
+    <%= image_tag 'top_image.jpg' %>
+    <p>気になるイベントを探してみよう！</p>
+  </div>
+<% end %>
 
 <div class="container my-3" style="max-width: 70rem;">
-  <h1>イベント一覧</h1>
+  <div class="text-center"><h3>イベント一覧</h3></div>
 
-  <%= link_to 'イベント登録', new_event_path, class: 'btn btn-outline-success' %>
+  <div class="text-center my-3">
+    <%= link_to 'イベント登録', new_event_path, class: 'btn btn-outline-success' %>
+  </div>
     <div class="index_events" >
       <% @events.each do |event| %>
         <div class="card img-thumbnail mx-auto caption">
