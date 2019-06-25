@@ -10,6 +10,7 @@
   <% end %>
   <p>名前：<%= @user.name %></p>
   <p>メールアドレス：<%= @user.email %></p>
+  <p><%= link_to 'プロフィール変更', edit_user_registration_path, class: 'btn btn-success' %></p>
 
   <p>所属グループ一覧</p>
   <% @groups.each do |g| %>
