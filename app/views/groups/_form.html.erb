@@ -1,22 +1,22 @@
-<div class="container">
+<div class="container my-3">
   <%= form_with(model: group, local: true, html: { role: 'form', :id => "group_form" }) do |f| %>
     <div class="form-group">
-      <%= f.label :icon %>
+      <%= f.label :icon, 'アイコン' %>
       <%= f.file_field :icon, class: 'form-control-file' %>
     </div>
 
     <div class="form-group">
-      <%= f.label :name %><br />
+      <%= f.label :name, 'グループ名' %><br />
       <%= f.text_field :name, class: 'form-control', placeholder: "チーム名を入力してください（必須）" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :summary %><br />
+      <%= f.label :summary, 'グループ概要' %><br />
       <%= f.text_area :summary, class: 'form-control', placeholder: "グループ概要を入力してください（必須）" %>
     </div>
 
     <div class="my-5">
-      <%= f.submit nil, class: 'btn btn-outline-primary' %>
+      <%= f.submit '登録', class: 'btn btn-outline-primary' %>
     </div>
   <% end %>
 </div>
