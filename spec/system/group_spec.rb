@@ -11,7 +11,7 @@ describe 'グループ管理機能', type: :system do
     visit user_session_path
     fill_in 'user_email', with: login_user.email
     fill_in 'user_password', with: login_user.password
-    click_button 'Log in'
+    click_button 'ログイン'
   end
 
   describe 'グループ作成機能' do
@@ -23,7 +23,7 @@ describe 'グループ管理機能', type: :system do
       fill_in 'group_name', with: 'グループ１'
       fill_in 'group_summary', with: '初のグループです'
       # 登録ボタンを押す
-      click_button 'Create Group'
+      click_button '登録'
       # 登録内容が画面に表示されているか確認する
       expect(page).to have_content 'グループ１'
     end
@@ -35,11 +35,11 @@ describe 'グループ管理機能', type: :system do
       fill_in 'group_name', with: 'グループ２'
       fill_in 'group_summary', with: '２番目のグループです'
       # 登録ボタンを押す
-      click_button 'Create Group'
+      click_button '登録'
       # 編集ページに移動する
       click_on 'グループ編集'
       fill_in 'group_name', with: '編集グループ２'
-      click_button 'Update Group'
+      click_button '登録'
       # 編集内容が反映されているか確認
       expect(page).to have_content '編集グループ２'
     end
@@ -51,7 +51,7 @@ describe 'グループ管理機能', type: :system do
       fill_in 'group_name', with: 'グループ３'
       fill_in 'group_summary', with: '３番目のグループです'
       # 登録ボタンを押す
-      click_button 'Create Group'
+      click_button '登録'
       # 編集ページに移動する
       click_on 'グループ削除'
       # JSの確認フォームでOKを押す
