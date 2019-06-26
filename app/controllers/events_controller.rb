@@ -3,8 +3,8 @@ class EventsController < ApplicationController
   before_action :check_contributor, only: %i[edit update destroy]
 
   def index
-    @q = Event.all.order(updated_at: 'DESC')
-    @events = @q.page(params[:page])
+    @q = Event.all.ransack(params[:q])
+    @events = @q.result(distinct: true).order(updated_at: 'DESC').page(params[:page])
   end
 
   def show
