@@ -16,7 +16,7 @@ describe 'イベントCRUD機能', type: :system do
     visit user_session_path
     fill_in 'user_email', with: login_user.email
     fill_in 'user_password', with: login_user.password
-    click_button 'Log in'
+    click_button 'ログイン'
   end
 
   describe '一覧表示機能' do
@@ -50,7 +50,7 @@ describe 'イベントCRUD機能', type: :system do
       visit event_path(event_1)
       click_on '編集'
       fill_in 'event_name', with: '編集したイベント名'
-      click_on 'Update Event'
+      click_on '登録'
       expect(page).to have_content '編集したイベント名'
     end
   end
@@ -70,7 +70,7 @@ describe 'イベントCRUD機能', type: :system do
       fill_in 'event_capacity', with: '200'
       fill_in 'event_meta', with: 'お弁当持参してください！'
       # 登録ボタンを押す
-      click_button 'Create Event'
+      click_button '登録'
       # 登録内容が画面に表示されているか確認する
       visit events_path
       expect(page).to have_content 'イベント3'
