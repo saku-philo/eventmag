@@ -1,16 +1,16 @@
 <div class="container my-5" style="max-width: 30rem;">
   <div class="card">
     <div class="card-body m-5">
-    <h1><%= t('.sign_in') %></h1>
+    <h3><%= t('.sign_in') %></h3>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group my-5">
-        <%= f.label :email %>
+        <%= f.label :email, t('.email') %>
         <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
       </div>
 
       <div class="form-group my-5">
-        <%= f.label :password %>
+        <%= f.label :password, t('.password') %>
         <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
       </div>
 
