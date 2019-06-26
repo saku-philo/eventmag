@@ -31,6 +31,9 @@ gem 'omniauth-google-oauth2'
 gem 'carrierwave'
 gem 'mini_magick', '~> 4.8'
 
+# 検索機能
+gem 'ransack'
+
 # デプロイ関係
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
