@@ -22,10 +22,12 @@ gem 'jquery-rails'
 gem 'jquery-validation-rails'
 gem 'font-awesome-sass', '~> 5.8.1'
 
-# ログイン、認証機能
+# ログイン、認証機能、ユーザー管理機能
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'rails_admin', '~> 1.3'
+gem 'cancancan'
 
 # 画像アップロード機能
 gem 'carrierwave'
