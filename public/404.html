@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .error {
-    padding-top: 5%
-  }
-  h1{
-    text-align: center;
-  }
-  img{
-    display: block;
-    margin: 0 auto;
-  }
+    body {
+      background-color: #ecf4f3;
+    }
+    .error {
+      width: 100%;
+      margin-top: 10%;
+    }
+    p {
+      text-align: center;
+    }
+    #number {
+      font-size: 10em;
+      color: red;
+      margin: 0;
+    }
+    #reason {
+      font-size: 5em;
+      color: red;
+      margin: 0;
+    }
+    #text {
+      font-size: 3em;
+      color: #555151;
+    }
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
   <div class="error">
-    <h1>お探しのページは見つかりませんでした</h1>
-    <img src="/404.jpg">
+    <p id="number">404</p>
+    <p id="reason">Not Found</p>
+    <p id="text">お探しのページは見つかりません。</p>
+
   </div>
 </body>
+
 </html>
