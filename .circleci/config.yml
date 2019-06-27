@@ -11,6 +11,8 @@ jobs:
           BUNDLE_PATH: vendor/bundle
           PGHOST: 127.0.0.1
           PGUSER: root
+          AWS_ACCESS_KEY_ID: "hoge"
+          AWS_SECRET_ACCESS_KEY: "fuga"
       - image: circleci/postgres:11.2-alpine-postgis
         environment:
           POSTGRES_USER: root
