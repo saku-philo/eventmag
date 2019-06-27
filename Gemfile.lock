@@ -50,6 +50,7 @@ GEM
     autoprefixer-rails (9.6.0)
       execjs
     bcrypt (3.1.13)
+    bcrypt_pbkdf (1.0.1)
     better_errors (2.5.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -402,6 +403,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt_pbkdf (>= 1.0, < 2.0)
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)
@@ -419,7 +421,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views (~> 1.0)
   dotenv-rails
-  ed25519
+  ed25519 (>= 1.2, < 2.0)
   factory_bot_rails
   faker
   fog-aws

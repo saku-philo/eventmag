@@ -9,7 +9,8 @@ gem 'dotenv-rails'
 
 gem 'unicorn' # アプリケーションサーバのunicorn
 gem 'mini_racer', platforms: :ruby
-gem 'ed25519'
+gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 
 # ミドルウェア
 gem 'pg', '>= 0.18', '< 2.0'
