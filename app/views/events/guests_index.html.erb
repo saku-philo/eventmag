@@ -1,0 +1,10 @@
+<div class="container my-5">
+  <p>現在の参加者一覧</p>
+  <% if @guests.present? %>
+    <% @guests.each do |g| %>
+      <div class="card container">
+        <div class="card-body"><%= g.name %>さん</div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
