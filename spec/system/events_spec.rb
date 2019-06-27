@@ -50,7 +50,7 @@ describe 'イベントCRUD機能', type: :system do
       visit event_path(event_1)
       click_on '編集'
       fill_in 'event_name', with: '編集したイベント名'
-      click_on '登録'
+      click_on '更新する'
       expect(page).to have_content '編集したイベント名'
     end
   end
