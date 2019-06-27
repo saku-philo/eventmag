@@ -1,16 +1,19 @@
 version: 2
 jobs:
   build:
+    parallelism: 3
     docker:
       # 環境情報を追加
       - image: circleci/ruby:2.5.5-node-browsers
         environment:
-          PGHOST: localhost
-          PGUSER: eventmag
-          RAILS_ENV: test
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          PGHOST: 127.0.0.1
+          PGUSER: root
       - image: circleci/postgres:11.2-alpine-postgis
         environment:
-          POSTGRES_USER: eventmag
+          POSTGRES_USER: root
           POSTGRES_DB: eventmag_test
           POSTGRES_PASSWORD: ""
 
@@ -34,7 +37,9 @@ jobs:
             - rails-demo-bundle-v2-
 
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
 
       # Store bundle cache
       - save_cache:
@@ -46,8 +51,7 @@ jobs:
       - run:
           name: Database setup
           command: |
-            bundle exec rake db:create db:schema:load --trace
-            bundle exec rake db:migrate
+            bin/rails db:create db:schema:load --trace
 
       # run tests!
       # rubocopを実行
