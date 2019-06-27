@@ -32,6 +32,7 @@ gem 'cancancan'
 # 画像アップロード機能
 gem 'carrierwave'
 gem 'mini_magick', '~> 4.8'
+gem 'fog-aws'
 
 # 検索機能
 gem 'ransack'
