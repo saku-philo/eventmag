@@ -7,6 +7,10 @@ gem 'rails', '~> 5.2.3'
 # 環境変数アクセス
 gem 'dotenv-rails'
 
+gem 'unicorn' # アプリケーションサーバのunicorn
+gem 'mini_racer', platforms: :ruby
+gem 'ed25519'
+
 # ミドルウェア
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
@@ -54,6 +58,12 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
+  # デプロイ関係
+  gem 'capistrano', '3.6.0' # capistranoのツール一式
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 
   # 静的解析
   #gem 'rubocop'
