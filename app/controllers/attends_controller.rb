@@ -1,5 +1,6 @@
 class AttendsController < ApplicationController
   before_action :authenticate_user!
+  before_action :user_contributer
 
   def create
     @attend = current_user.attends.new(attend_params)
@@ -23,5 +24,10 @@ class AttendsController < ApplicationController
 
   def attend_params
     params.permit(:event_id)
+  end
+
+  def user_contributer
+    event = Event.find(params[:event_id])
+    redirect_to events_path, notice: "イベント投稿者は参加申し込み、キャンセルは出来ません！" if event.user == current_user
   end
 end

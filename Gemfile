@@ -26,6 +26,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'jquery-rails'
 gem 'jquery-validation-rails'
 gem 'font-awesome-sass', '~> 5.8.1'
+gem 'font_awesome5_rails'
 
 # ログイン、認証機能、ユーザー管理機能
 gem 'devise'
