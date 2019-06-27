@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attend = Attend.find_by(user_id: current_user.id, event_id: @event.id) if current_user
-    all_guest = @event.attends.all
+    all_guest = @event.attends.all.limit(3)
     @guests = all_guest.map(&:user)
   end
 
@@ -43,6 +43,13 @@ class EventsController < ApplicationController
     else
       render :index
     end
+  end
+
+  def guests_index
+    @event = Event.find(params[:id])
+    all_guest = @event.attends.all
+    @guests = all_guest.map(&:user)
+    
   end
 
   private

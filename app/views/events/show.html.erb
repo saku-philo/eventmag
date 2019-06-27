@@ -23,9 +23,11 @@
       <div class="container mt-5">
         <!-- イベントへの参加（attend create）ボタン -->
         <!-- ログインしていて、イベントに参加申し込みをしている場合、キャンセルボタンを表示する -->
-        <% if current_user && user_apply_event?(@event)  %>
+        <% if current_user && user_apply_event?(@event) %>
           <div class="text-center"><%= link_to '参加キャンセル', attend_path(@attend),
                                             method: :delete, class: 'btn btn-danger' %></div>
+        <% elsif current_user == @event.user %>
+          <div></div>
         <% else %>
           <!-- ログインしていない場合、ログイン画面に遷移させる -->
           <div class="text-center"><%= link_to '参加を申し込む', attends_path(event_id: @event.id),
@@ -34,10 +36,11 @@
       </div>
 
       <br/>
-      <p>現在の参加者数：<%=@guests.count %>人</p>
+      <p>現在の参加者数：<%= @guests.count %>人</p>
       <% @guests.each do |g| %>
         <p><%= g.name %>さん</p>
       <% end %>
+      <%= link_to '参加者一覧', guests_index_event_path(@event) %>
 
       <%= link_to '一覧へ', events_path, class: 'btn btn-primary' %>
 

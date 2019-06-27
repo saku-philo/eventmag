@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :events
+  resources :events do
+    get :guests_index, on: :member, controller: :events
+  end
   resources :users, only: [:show]
   resources :attends, only: [:create, :destroy]
   resources :joins, only: [:create, :destroy]

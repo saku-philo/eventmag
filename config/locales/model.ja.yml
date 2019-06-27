@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+      comment: "コメント"
+      contact: "問い合わせ"
+      event: "イベント"
+      grouo: "グループ"
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        admin: "管理者権限"
+        notification_status: "通知頻度"
+        current_password: "現在のパスワード"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+        created_at: "作成日時"
+        updated_at: "更新日時"
+      event:
+        image: "画像"
+        name: "イベント名"
+        place: "イベント場所"
+        date: "開催日"
+        start_at: "開始時間"
+        end_at: "終了時間"
+        cost: "費用"
+        capacity: "参加可能人数"
+        link_url: "参考url"
+        meta: "備考"
+      group:
+        icon: "アイコン"
+        name: "グループ名"
+        summary: "グループ概要"

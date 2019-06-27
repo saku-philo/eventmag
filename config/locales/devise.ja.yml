@@ -40,6 +40,7 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+        minimum_password_length: '6文字以上で入力してください'
       edit:
         title: 'プロフィール編集'
         icon: 'アイコン'
