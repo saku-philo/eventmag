@@ -20,6 +20,6 @@ class Event < ApplicationRecord
   has_many :contacts, dependent: :destroy
 
   def time_check
-    errors.add(:date, ": 開始時間より遅い終了時間は入力出来ません。") if start_at > end_at
+    errors.add(:end_at, ": 開始時間より遅い終了時間は入力出来ません。") if start_at && start_at > end_at
   end
 end
