@@ -49,7 +49,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     all_guest = @event.attends.all
     @guests = all_guest.map(&:user)
-    
   end
 
   private
