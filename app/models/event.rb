@@ -7,7 +7,6 @@ class Event < ApplicationRecord
   validates :name, presence: true, length: { maximum: 100 }
   validates :start_at, presence: true
   validate :time_check
-  #binding.pry
   with_options presence: true do
     validates :place
     validates :date
@@ -21,8 +20,6 @@ class Event < ApplicationRecord
   has_many :contacts, dependent: :destroy
 
   def time_check
-    if start_at > end_at
-      errors.add(:date, ": 開始時間より遅い終了時間は入力出来ません。")
-    end
+    errors.add(:date, ": 開始時間より遅い終了時間は入力出来ません。") if start_at > end_at
   end
 end
