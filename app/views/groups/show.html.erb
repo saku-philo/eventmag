@@ -2,7 +2,7 @@
   <h3>グループページ</h3>
   <div class="card shadow img-thumbnail mx-auto" style="max-width: 70rem;">
     <% if @group.icon.url.presence %>
-      <%= image_tag @group.icon.url, class: 'img-fluid' %>
+      <%= image_tag @group.icon.url, class: 'img-top', style: 'width: 300px ; height: auto;' %>
     <% else %>
       <!-- 'no_image.png'は、assets/images内に配置 -->
       <%= image_tag 'no_image.png', class: 'img-fluid', style: 'border: 1px solid lightgray' %>
