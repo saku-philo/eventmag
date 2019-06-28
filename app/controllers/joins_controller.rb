@@ -7,6 +7,8 @@ class JoinsController < ApplicationController
     if user
       @info = group.invite_member(user, group)
       redirect_to group_path(group), notice: @info.to_s
+    elsif join_params[:user_name].empty?
+      redirect_to group_path(group), alert: "招待する人の名前を入力してください"
     else
       redirect_to group_path(group), alert: "#{join_params[:user_name]}さんは未登録のようです。確認してください"
     end
