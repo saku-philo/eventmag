@@ -1,3 +1,6 @@
+[![ruby version](https://img.shields.io/badge/Ruby-v2.5.5-green.svg)](https://www.ruby-lang.org/ja/)
+[![rails version](https://img.shields.io/badge/Rails-v5.2.3-brightgreen.svg)](http://rubyonrails.org/)
+[![CircleCI](https://circleci.com/gh/hiron0424/eventmag.svg?style=svg)](https://circleci.com/gh/hiron0424/eventmag)
 # README
 
 # アプリ名：eventmag
@@ -55,13 +58,13 @@ https://drive.google.com/file/d/1J_nGxPVocNoPjdlnj416YXFzNDByELQ3/view?usp=shari
 ### ワイヤーフレーム
 https://drive.google.com/file/d/1qDyqemBq3D5i2nXm4nUFl7Zpkhm1guGr/view?usp=sharing
 
-## 使用gem(予定含む)
+## 使用gem
 * device
 * omniath
+* omniauth-google-oauth2
 * ransack
 * kaminari
-* rails_autolink
 * unicorn
 * capistrano
-* aws-sdk-s3
-* nod
+* jquery-validation-rails
+* faker
