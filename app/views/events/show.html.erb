@@ -12,8 +12,8 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">イベント名：<strong><%= @event.name %></strong></li>
           <li class="list-group-item">開催場所：<%= @event.place %></li>
-          <li class="list-group-item">日時：<%= @event.date %> 、開始時間：<%= "#{@event.start_at.strftime("%H:%M")}" %></li>
-          <li class="list-group-item">終了時間：<%= @event.end_at.presence ?  "#{@event.end_at&.strftime("%H:%M")}" : '未設定' %></li>
+          <li class="list-group-item">日時：<%= @event.date %> 、開始時間：<%= "#{@event.start_at.strftime("%H:%M")}" %>
+          、終了時間：<%= @event.end_at.presence ?  "#{@event.end_at&.strftime("%H:%M")}" : '未設定' %></li>
           <li class="list-group-item">参加費用：<%= "#{@event.cost}円" %></li>
           <li class="list-group-item">url：<%= @event.link_url %></li>
           <li class="list-group-item">概要：<%= @event.meta %></li>
@@ -24,7 +24,7 @@
         <!-- イベントへの参加（attend create）ボタン -->
         <!-- ログインしていて、イベントに参加申し込みをしている場合、キャンセルボタンを表示する -->
         <% if current_user && user_apply_event?(@event) %>
-          <div class="text-center"><%= link_to '参加キャンセル', attend_path(@attend),
+          <div class="text-center"><%= link_to '参加キャンセル', attend_path(@attend, event_id: @event.id),
                                             method: :delete, class: 'btn btn-danger' %></div>
         <% elsif current_user == @event.user %>
           <div></div>
