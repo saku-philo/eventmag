@@ -12,11 +12,12 @@ class ContactsController < ApplicationController
   end
 
   def create
+    @event = Event.find(params[:contact][:event_id])
     @contact = current_user.contacts.build(contact_params)
     if @contact.save
       redirect_to events_path, notice: "イベント：#{@contact.event.name}について問い合わせを行いました！"
     else
-      render :new, notice: '問い合わせが送信出来ませんでした。'
+      render :new
     end
   end
 
