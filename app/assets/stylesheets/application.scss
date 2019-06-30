@@ -2,8 +2,24 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+/* 背景色 */
 body {
   background-color: #fbfaf5
+}
+
+/* bodyの高さを一定に調整 */
+.wrapper {
+  min-height: 100vh;
+  position: relative;/*←相対位置*/
+  padding-bottom: 120px;/*←footerの高さ*/
+  box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+
+.footer {
+  width: 100%;
+  position: absolute;/*←絶対位置*/
+  text-align: center;
+  bottom: 0; /*下に固定*/
 }
 
 /* 投稿イベント一覧の設定 */
@@ -25,10 +41,6 @@ body {
 label.error {
   color: red;
   font-weight: bold;
-}
-
-.empty_content {
-  min-height: 100%;
 }
 
 /* top画面の画像調整 */
@@ -56,11 +68,6 @@ label.error {
   height: 350px;
   object-fit: cover;
   opacity: 0.6;
-}
-
-/* ヘッダーのリンク */
-.active {
-
 }
 
 .logo-font {

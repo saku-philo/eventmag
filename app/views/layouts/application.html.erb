@@ -10,23 +10,25 @@
   </head>
 
   <body>
-    <header>
-      <%= render 'layouts/header'%>
-    </header>
+    <div class="wrapper" >
+      <header>
+        <%= render 'layouts/header'%>
+      </header>
 
-    <!-- フラッシュメッセージを表示する部分 -->
-    <% if flash.notice.present? %>
-      <div class="container alert alert-success my-2">
-        <%= notice %>
-      </div>
-    <% elsif flash.alert.present? %>
-      <div class="container alert alert-danger my-2">
-        <%= alert %>
-      </div>
-    <% end %>
+      <!-- フラッシュメッセージを表示する部分 -->
+      <% if flash.notice.present? %>
+        <div class="container alert alert-success my-2">
+          <%= notice %>
+        </div>
+      <% elsif flash.alert.present? %>
+        <div class="container alert alert-danger my-2">
+          <%= alert %>
+        </div>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
 
-    <%= render 'layouts/footer' %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
