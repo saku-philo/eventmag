@@ -1,10 +1,9 @@
-<div class="container">
-  <h3>参加申し込み済みのイベント一覧</h3>
+<div class="container user-apply-event px-1 py-3 mt-3">
+  <h5 class="ml-3 mb-3">参加を申し込んだイベント</h5>
 
-  <%= link_to 'イベント登録', new_event_path, class: 'btn btn-outline-success' %>
-  <div class="index_events" >
+  <div class="user-apply-event__index" >
     <% events.each do |event| %>
-      <div class="card img-thumbnail mx-auto caption">
+      <div class="card img-thumbnail mx-auto user-apply-event__index__item">
         <% if event.image.url.presence %>
           <%= image_tag event.image.url, style: 'border: 1px solid lightgray' %>
         <% else %>
@@ -12,9 +11,9 @@
           <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
         <% end %>
         <div class="card-body">
-          <h5 class="card-title"><%= event.name %></h5>
-          <h6 class="card-subtitle text-muted">開催日:<%= event.date %></h6>
-          <%= link_to '詳細', event_path(event), class: 'btn btn-primary' %>
+          <p class="card-title"><%= event.name %></p>
+          <p class="card-subtitle text-muted">開催日:<%= event.date %></p>
+          <%= link_to '詳細', event_path(event), class: 'btn-sm btn-primary' %>
         </div>
       </div>
     <% end %>
