@@ -1,26 +1,51 @@
-<div class="container">
-  <h1>マイページ</h1>
-  <% if @user.icon.url.presence %>
-      <%= image_tag @user.icon.url, size: '100x100',
-                                    class: 'rounded-circle border border-secondly img-responsive mx-3 my-2' %>
-    <% else %>
-      <!-- 'no_image_man.jpeg'は、app/assets/images内に配置 -->
-      <%= image_tag 'no_image_man.jpg', size: '100x100',
-                                        class: 'rounded-circle border border-secondly img-responsive mx-3 my-2' %>
-  <% end %>
-  <p>名前：<%= @user.name %></p>
-  <p>メールアドレス：<%= @user.email %></p>
-  <p><%= link_to 'プロフィール変更', edit_user_registration_path, class: 'btn btn-success' %></p>
+<div class="container-fluid">
+  <div class="container">
+    <h2 class="my-3">マイページ</h2>
+    <div class="row user-info py-3">
+      <div class="user-info__icon col-sm-2">
+        <% if @user.icon.url.presence %>
+            <%= image_tag @user.icon.url, size: '100x100',
+                                          class: 'rounded-circle border border-secondly img-responsive my-2' %>
+          <% else %>
+            <!-- 'no_image_man.jpeg'は、app/assets/images内に配置 -->
+            <%= image_tag 'no_image_man.jpg', size: '100x100',
+                                              class: 'rounded-circle border border-secondly img-responsive my-2' %>
+        <% end %>
+      </div>
+      <div class="user-info__name-and-email col-sm-4 col-lg-4">
+        <p class="my-3">名前：<%= @user.name %></p>
+        <p class="my-3">メール：<%= @user.email %></p>
+        <p><%= link_to 'プロフィール変更', edit_user_registration_path, class: 'btn btn-success' %></p>
+      </div>
 
-  <p>所属グループ一覧</p>
-  <% @groups.each do |g| %>
-    <p><%= link_to "#{g.name}", group_path(g) %></p>
-  <% end %>
+      <div class="user-info__group col-sm-12 col-lg-6 card p-2">
+        <p>所属グループ</p>
+        <div class="user-info__group-flex">
+          <div class="user-info__group__index">
+            <% @groups.each do |g| %>
+              <div class="user-info__group__index__item">
+                <%= link_to "#{g.name}", group_path(g) %>
+              </div>
+            <% end %>
+          </div>
+          <div class="user-info__group__btn">
+            <%= link_to 'グループ作成', new_group_path, class: 'btn-sm btn-primary mb-3' %>
+            <%= link_to '所属グループ一覧', events_path, class: 'btn-sm btn-info' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <p>投稿したイベント一覧</p>
-  <% @user_planning_events.each do |event| %>
-    <p><%= link_to "#{event.name}", contacts_path(id: event.id) %></p>
-  <% end %>
+<div class="container user-info__planning-event p-3">
+  <h5>投稿したイベント</h5>
+  <div class="row user-info__planning-event--flex">
+    <% @user_planning_events.each do |event| %>
+      <div class="user-info__planning-event__item col-sm-4">
+        <%= link_to "#{event.name}", contacts_path(id: event.id) %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 

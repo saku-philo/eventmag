@@ -1,10 +1,12 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "./users.scss";
+@import "./events.scss";
 
 /* 背景色 */
 body {
-  background-color: #fbfaf5
+  background-color: #f6f6f6;
 }
 
 /* bodyの高さを一定に調整 */

@@ -1,3 +1,43 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-info {
+  font-weight: bold;
+}
+.user-info__group-flex {
+  display: flex;
+}
+.user-info__group__index {
+  width: 290px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.user-info__group__index__item {
+  width: 145px;
+}
+.user-info__group__btn {
+  width: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.user-info__group__btn a {
+  width: 150px;
+}
+.user-info__planning-event {
+  box-shadow: 6px 6px 8px -3px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+.user-info__planning-event--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.user-info__planning-event__item {
+  font-weight: bold;
+}
+.user-info__planning-event__item a {
+  color: #ffa500;
+}
