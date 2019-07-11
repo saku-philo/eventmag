@@ -41,3 +41,7 @@
 .user-info__planning-event__item a {
   color: #ffa500;
 }
+.user-info__planning-event__item a:hover {
+  color: #d26912;
+  transition: 0.2s;
+}

@@ -41,7 +41,7 @@
   <h5>投稿したイベント</h5>
   <div class="row user-info__planning-event--flex">
     <% @user_planning_events.each do |event| %>
-      <div class="user-info__planning-event__item col-sm-4">
+      <div class="user-info__planning-event__item col-sm-4 my-2">
         <%= link_to "#{event.name}", contacts_path(id: event.id) %>
       </div>
     <% end %>

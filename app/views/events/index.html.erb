@@ -1,9 +1,11 @@
-<% unless user_signed_in? %>
+<%# unless user_signed_in? %>
   <div class="top-photo">
-    <%= image_tag 'top_image.jpg' %>
-    <p>気になるイベントを探してみよう！</p>
+    <%#= image_tag 'top_image.jpg' %>
+    <!--p>気になるイベントを探してみよう！</p-->
+    <%= render partial: 'events/app_info' %>
   </div>
-<% end %>
+<%# end %>
+
 
 <div class="container my-3" style="max-width: 70rem;">
   <div class="text-center"><h3>イベント一覧</h3></div>
