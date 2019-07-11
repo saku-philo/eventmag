@@ -48,10 +48,12 @@ label.error {
 /* top画面の画像調整 */
 .top-photo {
   position: relative;
-  background: #000;
+  padding: 50px;
+  background-image: image-url("top_image.jpg");
+  background-position: center;
 }
 
-.top-photo p {
+/* .top-photo p {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,6 +66,7 @@ label.error {
   font-weight: bold;
   font-size: 3em;
 }
+*/
 
 .top-photo img {
   width: 100%;
