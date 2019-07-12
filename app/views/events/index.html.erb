@@ -7,32 +7,51 @@
 <%# end %>
 
 
-<div class="container my-3" style="max-width: 70rem;">
+<div class="container my-3"> <!--style="max-width: 70rem;"-->
   <div class="text-center"><h3>イベント一覧</h3></div>
 
   <div class="text-center my-3">
     <%= link_to 'イベント登録', new_event_path, class: 'btn btn-outline-success' %>
   </div>
-    <div class="index_events" >
-      <% @events.each do |event| %>
-        <div class="card img-thumbnail mx-auto caption">
-          <% if event.image.url.presence %>
-            <%= image_tag event.image.url, style: 'border: 1px solid lightgray' %>
-          <% else %>
-            <!-- 'no_image.png'は、assets/images内に配置 -->
-            <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
-          <% end %>
-          <div class="card-body">
-            <p class="card-title"><%= event.name %></p>
-            <p class="card-subtitle text-muted">開催日:<%= event.date %></p>
-            <%= link_to '詳細', event_path(event), class: 'btn btn-primary btn-sm float-right' %>
-          </div>
+  <div class="index_events" >
+    <% @events.each do |event| %>
+      <div class="card img-thumbnail mx-auto caption">
+        <% if event.image.url.presence %>
+          <%= image_tag event.image.url, style: 'border: 1px solid lightgray' %>
+        <% else %>
+          <!-- 'no_image.png'は、assets/images内に配置 -->
+          <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
+        <% end %>
+        <div class="card-body">
+          <p class="card-title"><%= event.name %></p>
+          <p class="card-subtitle text-muted">開催日:<%= event.date %></p>
+          <%= link_to '詳細', event_path(event), class: 'btn btn-primary btn-sm float-right' %>
         </div>
-      <% end %>
-    </div>
-
-    <div class="my-3">
-      <%= paginate @events %>
-      <%= page_entries_info @events %>
-    </div>
+      </div>
+    <% end %>
   </div>
+
+    <!--div class="my-3">
+      <%#= paginate @events %>
+      <%#= page_entries_info @events %>
+    </div-->
+</div>
+
+<div class="group-index container">
+  <% @groups.each do |group| %>
+    <div class="group-index__info">
+      <div class="group-index__info__image">
+        <% if group.icon.url.presence %>
+          <%= image_tag group.icon.url, style: 'border: 1px solid lightgray' %>
+        <% else %>
+          <!-- 'no_image.png'は、assets/images内に配置 -->
+          <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
+        <% end %>
+      </div>
+      <div>
+        <p><%= group.name %></p>
+      </div>
+    </div>
+  <% end %>
+  <%# binding.pry %>
+</div>

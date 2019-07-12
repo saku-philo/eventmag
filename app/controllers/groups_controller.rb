@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   before_action :set_group, only: %i[show edit update destroy]
   before_action :check_group_leader, only: %i[edit update destroy]
   before_action :check_group_member, only: %i[show]

@@ -1,3 +1,25 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* -------------------------------
+ * トップ画面（グループ紹介部分）
+ * ------------------------------- */
+.group-index {
+  text-align: center;
+}
+.group-index__info {
+  width: 120px;
+  height: 75px;
+  display: inline-block;
+  margin: 10px 5px 10px;
+  text-align: center;
+}
+.group-index__info p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.group-index__info__image {
+}
+.group-index__info__image img {
+  width: 120px;
+  height: 73px;
+  object-fit: cover;
+}
