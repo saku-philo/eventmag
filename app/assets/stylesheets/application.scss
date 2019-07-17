@@ -36,8 +36,9 @@ body {
 }
 
 .caption img {
-  width: 100%;
+  width: 260px;
   height: 230px;
+  object-fit: cover;
 }
 
 /* フロントバリデーション関係 */
