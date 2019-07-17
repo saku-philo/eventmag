@@ -70,7 +70,13 @@
   display: inline-block;
   margin-top: 6px;
 }
-
+.index-event__title {
+  margin: 40px auto 10px;
+  border-bottom: 2px solid #ff6347;
+}
+.index-event__title p {
+  font-size: 1.2rem;
+}
 
 /* -------------------------------
  * トップ画面アプリ概要説明欄（グループ）

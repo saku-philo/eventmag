@@ -3,6 +3,14 @@
  * ------------------------------- */
 .group-index {
   text-align: center;
+  margin: 60px auto 10px;
+}
+.group-index__title {
+  border-bottom: 2px solid #ff6347;
+  margin-bottom: 10px;
+}
+.group-index__title p {
+  font-size: 1.2rem;
 }
 .group-index__info {
   width: 120px;

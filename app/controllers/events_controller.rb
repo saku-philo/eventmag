@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   def index
     @q = Event.all.ransack(params[:q])
-    @events = @q.result(distinct: true).order(updated_at: 'DESC').limit(6)#.page(params[:page])
+    @events = @q.result(distinct: true).order(updated_at: 'DESC').limit(6) # .page(params[:page])
     @groups = Group.order(updated_at: 'DESC').limit(5)
   end
 
