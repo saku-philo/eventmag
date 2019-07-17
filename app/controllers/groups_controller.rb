@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_group, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new create show edit update destroy]
+  before_action :set_group, only: %i[show edit update destroy preview]
   before_action :check_group_leader, only: %i[edit update destroy]
   before_action :check_group_member, only: %i[show]
 
@@ -46,6 +46,12 @@ class GroupsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def preview
+    @joins = @group.joins.where(is_leader: false)
+    @leader = Group.identify_leader(@group)
+    @members = Group.group_members(@group)
   end
 
   private

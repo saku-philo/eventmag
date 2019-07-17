@@ -1,3 +1,82 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* -------------------------------
+ * トップ画面（グループ紹介部分）
+ * ------------------------------- */
+.group-index {
+  text-align: center;
+  margin: 60px auto 10px;
+}
+.group-index__title {
+  border-bottom: 2px solid #ff6347;
+  margin-bottom: 10px;
+}
+.group-index__title p {
+  font-size: 1.2rem;
+}
+.group-index__info {
+  width: 120px;
+  height: 75px;
+  display: inline-block;
+  margin: 10px 5px 10px;
+  text-align: center;
+}
+.group-index__info p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.group-index__info__image {
+}
+.group-index__info__image img {
+  width: 120px;
+  height: 73px;
+  object-fit: cover;
+}
+
+/* -------------------------------
+ * プレビュー(ゲスト用グループ紹介画面)
+ * ------------------------------- */
+.group-preview {
+  margin: 20px;
+}
+.group-preview__info {
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 6px 6px 8px -3px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+.group-preview__info__icon-and-name {
+  display: inline-block;
+  padding: 10px;
+  width: 320px;
+  text-align: center;
+}
+.group-preview__info__icon img{
+  width: 300px;
+  height: 300px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.group-preview__info__name p {
+  font-weight: bold;
+}
+.group-preview__summary {
+  width: 450px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  margin: 0 10px 0;
+  word-break : break-all;
+}
+.group-preview__summary__leader{
+  margin: 0 0 30px;
+}
+.group-preview__member {
+  margin: 30px 10px 10px;
+  padding: 30px;
+  box-shadow: 6px 6px 8px -3px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+.group-preview__member__description {
+  border-bottom: 2px solid lightgrey;
+}

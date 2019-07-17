@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create, :index]
 
   resources :groups do
+    get :preview, on: :member
     resources :comments
   end
 end
