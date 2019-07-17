@@ -1,3 +1,54 @@
-<h3>ゲスト用グループshow画面</h3>
-<p>グループ名</p>
-<%= @group.name %>
+<div class="container">
+  <div class="group-preview">
+    <div class="group-preview__info">
+      <div class="group-preview__info__icon-and-name">
+        <div class="group-preview__info__icon">
+          <% if @group.icon.url.presence %>
+            <%= image_tag @group.icon.url %>
+          <% else %>
+            <!-- 'no_image.png'は、assets/images内に配置 -->
+            <%= image_tag 'no_image.png' %>
+          <% end %>
+        </div>
+        <div class="group-preview__info__name my-2">
+          <p><%= @group.name %></p>
+        </div>
+      </div>
+      <div class="group-preview__summary">
+        <div class="group-preview__summary__leader">
+          <p>リーダー</p>
+          <% if @leader.icon.url.presence %>
+              <%= image_tag @leader.icon.url, size: '70x70',
+                                            class: 'rounded-circle border border-secondly img-responsive my-2' %>
+            <% else %>
+              <!-- 'no_image_man.jpeg'は、app/assets/images内に配置 -->
+              <%= image_tag 'no_image_man.jpg', size: '70x70',
+                                                class: 'rounded-circle border border-secondly img-responsive my-2' %>
+            <% end %>
+          <span class="mx-3"><%= @leader.name %></span>
+        </div>
+        <div class="group-preview__summary__description">
+          <p>グループの説明</p>
+          <p><%= @group.summary%></p>
+        </div>
+      </div>
+    </div>
+    <div class="group-preview__member">
+      <p>グループメンバー（<%= @joins.count %>名）</p>
+      <% @joins.each do |join| %>
+        <div class="group-preview__member__description">
+          <% if join.user.icon.url.presence %>
+            <%= image_tag join.user.icon.url, size: '70x70',
+                                          class: 'rounded-circle border border-secondly img-responsive my-2' %>
+          <% else %>
+            <!-- 'no_image_man.jpeg'は、app/assets/images内に配置 -->
+            <%= image_tag 'no_image_man.jpg', size: '70x70',
+                                              class: 'rounded-circle border border-secondly img-responsive my-2' %>
+          <% end %>
+          <span class="mx-2"><%= join.user.name %></span>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

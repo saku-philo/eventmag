@@ -49,6 +49,9 @@ class GroupsController < ApplicationController
   end
 
   def preview
+    @joins = @group.joins.where(is_leader: false)
+    @leader = Group.identify_leader(@group)
+    @members = Group.group_members(@group)
   end
 
   private
