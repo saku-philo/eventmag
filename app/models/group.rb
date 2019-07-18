@@ -40,9 +40,9 @@ class Group < ApplicationRecord
     if Group.group_member?(group, user)
       "#{user.name}さんは既にグループに登録済みです。"
     elsif joins.create(user: user)
-      "#{user.name}さんをグループに招待しました！"
+      "#{user.name}さんがグループに参加しました！"
     else
-      "#{user.name}さんの招待に失敗しました。"
+      "#{user.name}さんのグループ参加が失敗しました。"
     end
   end
 end

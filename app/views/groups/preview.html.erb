@@ -13,6 +13,15 @@
         <div class="group-preview__info__name my-2">
           <p><%= @group.name %></p>
         </div>
+        <div>
+          <% unless Group.group_member?(@group, current_user) %>
+            <%= form_with(url: joins_path, method: :post, local: true) do |f| %>
+              <%= f.hidden_field :user_email, value: current_user&.email %>
+              <%= f.hidden_field :group_id, value: @group.id %>
+              <%= f.submit 'グループに参加する', class: 'btn btn-success' %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
       <div class="group-preview__summary">
         <div class="group-preview__summary__leader">

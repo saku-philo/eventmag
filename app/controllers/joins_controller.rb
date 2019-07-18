@@ -3,14 +3,14 @@ class JoinsController < ApplicationController
 
   def create
     group = Group.find(join_params[:group_id])
-    user = User.find_by(name: join_params[:user_name])
+    user = User.find_by(email: join_params[:user_email])
     if user
       @info = group.invite_member(user, group)
       redirect_to group_path(group), notice: @info.to_s
-    elsif join_params[:user_name].empty?
-      redirect_to group_path(group), alert: "招待する人の名前を入力してください"
+    elsif join_params[:user_email].empty?
+      redirect_to group_path(group), alert: "招待する人のメールアドレスを入力してください"
     else
-      redirect_to group_path(group), alert: "#{join_params[:user_name]}さんは未登録のようです。確認してください"
+      redirect_to group_path(group), alert: "#{join_params[:user_email]}のアドレスは未登録のようです。確認してください"
     end
   end
 
@@ -27,7 +27,7 @@ class JoinsController < ApplicationController
   private
 
   def join_params
-    params.permit(:group_id, :user_name)
+    params.permit(:group_id, :user_email)
   end
 
   def join_delete_params
