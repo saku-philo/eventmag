@@ -9,10 +9,9 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @joins = @group.joins.where(is_leader: false)
+    @joins = @group.joins.where(is_leader: false).includes(:user)
     @leader = Group.identify_leader(@group)
-    @members = Group.group_members(@group)
-    @comments = @group.comments.all
+    @comments = @group.comments.all.includes(:user)
     @comment = @group.comments.build
   end
 
@@ -49,9 +48,8 @@ class GroupsController < ApplicationController
   end
 
   def preview
-    @joins = @group.joins.where(is_leader: false)
+    @joins = @group.joins.where(is_leader: false).includes(:user)
     @leader = Group.identify_leader(@group)
-    @members = Group.group_members(@group)
   end
 
   private
