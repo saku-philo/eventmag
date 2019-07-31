@@ -27,15 +27,6 @@ class Group < ApplicationRecord
     group.users.find_by(name: user&.name).present?
   end
 
-  def self.group_members(group)
-    members = []
-    join_info = group.joins.where(is_leader: false)
-    join_info.each do |info|
-      members << User.find(info.user_id)
-    end
-    members
-  end
-
   def invite_member(user, group)
     if Group.group_member?(group, user)
       "#{user.name}さんは既にグループに登録済みです。"
