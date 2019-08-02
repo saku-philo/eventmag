@@ -1,6 +1,10 @@
+<div class="top-photo">
+  <%= render partial: 'events/app_info' %>
+</div>
+
 <div class="container my-3">
   <div class="text-center index-event__title">
-    <p>イベント一覧</p>
+    <p>最新のイベント</p>
   </div>
 
   <div class="text-center my-3">
@@ -23,9 +27,31 @@
       </div>
     <% end %>
   </div>
+  <div class="event-index-link my-3">
+    <%= link_to 'すべてのイベント', events_path, class: 'button button-event' %>
+  </div>
+</div>
 
-    <div class="my-3">
-      <%= paginate @events %>
-      <%= page_entries_info @events %>
+<!-- グループ一覧表示部分 -->
+<div class="group-index container">
+  <div class="group-index__title">
+    <p>注目のグループ</p>
+  </div>
+  <% @groups.each do |group| %>
+    <div class="group-index__info">
+      <%= link_to preview_group_path(group) do %>
+        <div class="group-index__info__image">
+          <% if group.icon.url.presence %>
+            <%= image_tag group.icon.url, style: 'border: 1px solid lightgray' %>
+          <% else %>
+            <!-- 'no_image.png'は、assets/images内に配置 -->
+            <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
+          <% end %>
+        </div>
+      <% end %>
+      <div>
+        <p><%= group.name %></p>
+      </div>
     </div>
+  <% end %>
 </div>
