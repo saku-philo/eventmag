@@ -1,0 +1,22 @@
+<div class="group-index container">
+  <div class="group-index__title">
+    <p>グループ一覧</p>
+  </div>
+  <% @groups.each do |group| %>
+    <div class="group-index__info">
+      <%= link_to preview_group_path(group) do %>
+        <div class="group-index__info__image">
+          <% if group.icon.url.presence %>
+            <%= image_tag group.icon.url, style: 'border: 1px solid lightgray' %>
+          <% else %>
+            <!-- 'no_image.png'は、assets/images内に配置 -->
+            <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
+          <% end %>
+        </div>
+      <% end %>
+      <div>
+        <p><%= group.name %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

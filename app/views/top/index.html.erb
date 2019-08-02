@@ -1,0 +1,60 @@
+<div class="top-photo">
+  <%= render partial: 'events/app_info' %>
+</div>
+
+<div class="container my-3">
+  <div class="text-center index-event__title">
+    <p>最新のイベント</p>
+  </div>
+
+  <div class="text-center my-3">
+    <%= link_to 'イベント登録', new_event_path, class: 'button button-event' if current_user %>
+  </div>
+  <div class="index_events" >
+    <% @events.each do |event| %>
+      <div class="card img-thumbnail mx-auto caption">
+        <% if event.image.url.presence %>
+          <%= image_tag event.image.url, style: 'border: 1px solid lightgray' %>
+        <% else %>
+          <!-- 'no_image.png'は、assets/images内に配置 -->
+          <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
+        <% end %>
+        <div class="card-body">
+          <p class="card-title"><%= event.name %></p>
+          <p class="card-subtitle text-muted">開催日:<%= event.date %></p>
+          <%= link_to '詳細', event_path(event), class: 'btn btn-primary btn-sm float-right' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="event-index-link my-3">
+    <%= link_to 'すべてのイベント', events_path, class: 'button button-event' %>
+  </div>
+</div>
+
+<!-- グループ一覧表示部分 -->
+<div class="group-index container">
+  <div class="group-index__title">
+    <p>注目のグループ</p>
+  </div>
+  <% @groups.each do |group| %>
+    <div class="group-index__info">
+      <%= link_to preview_group_path(group) do %>
+        <div class="group-index__info__image">
+          <% if group.icon.url.presence %>
+            <%= image_tag group.icon.url, style: 'border: 1px solid lightgray' %>
+          <% else %>
+            <!-- 'no_image.png'は、assets/images内に配置 -->
+            <%= image_tag 'no_image.png', style: 'border: 1px solid lightgray' %>
+          <% end %>
+        </div>
+      <% end %>
+      <div>
+        <p><%= group.name %></p>
+      </div>
+    </div>
+  <% end %>
+  <div class="group-index-link my-3">
+    <%= link_to 'すべてのグループ', groups_path, class: 'button button-group' %>
+  </div>
+</div>
