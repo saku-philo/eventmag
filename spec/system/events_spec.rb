@@ -63,7 +63,7 @@ describe 'イベントCRUD機能', type: :system do
       # 各種項目を入力する
       fill_in 'event_name', with: 'イベント3'
       fill_in 'event_place', with: '渋谷区第二広場'
-      fill_in 'event_date', with: '2019/07/15'.to_date
+      fill_in 'event_date', with: '2019/11/15'.to_date
       fill_in 'event_start_at', with: '10:00'
       fill_in 'event_end_at', with: '16:00'
       fill_in 'event_cost', with: '1000'
