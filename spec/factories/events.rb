@@ -3,7 +3,7 @@ FactoryBot.define do
     name { 'テストイベント１' }
     place { '渋谷駅前焼き鳥屋' }
     image { '' }
-    date { '2019-06-28' }
+    date { '2019-11-28' }
     start_at { '20:00' }
     end_at { '22:00' }
     link_url {'http://yakitori.com'}
