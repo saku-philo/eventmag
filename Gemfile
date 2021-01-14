@@ -32,7 +32,7 @@ gem 'font_awesome5_rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'rails_admin', '~> 1.3'
+gem 'rails_admin', '~> 1.4'
 gem 'cancancan'
 
 # 画像アップロード機能
